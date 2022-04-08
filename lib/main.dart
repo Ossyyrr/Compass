@@ -1,6 +1,4 @@
-import 'package:compass/helpers/repos/magnetometer.dart';
-import 'package:compass/helpers/widgets/compass.dart';
-import 'package:compass/helpers/widgets/degress.dart';
+import 'package:custom_compass/custom_compass.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,6 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            const Text('data'),
             Compass(
               magnetometerRepo: magnetometerRepo,
               child: const Image(
