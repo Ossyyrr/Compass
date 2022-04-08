@@ -2,9 +2,14 @@ import 'package:compass/helpers/repos/magnetometer.dart';
 import 'package:flutter/material.dart';
 
 class Compass extends StatelessWidget {
-  const Compass({Key? key, required this.magnetometerRepo}) : super(key: key);
+  const Compass({
+    Key? key,
+    required this.magnetometerRepo,
+    required this.child,
+  }) : super(key: key);
 
   final MagnetometerRepository magnetometerRepo;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +23,7 @@ class Compass extends StatelessWidget {
               children: <Widget>[
                 Transform.rotate(
                   angle: data / 57.295779513,
-                  child: const Image(
-                    image: AssetImage('assets/compass.png'),
-                    fit: BoxFit.cover,
-                    width: 150,
-                    height: 150,
-                  ),
+                  child: child,
                 ),
                 // Transform.rotate(
                 //   angle: (az) / 57.295779513,

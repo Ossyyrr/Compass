@@ -2,10 +2,11 @@ import 'package:compass/helpers/repos/magnetometer.dart';
 import 'package:flutter/material.dart';
 
 class Degrees extends StatelessWidget {
-  const Degrees({Key? key, required this.magnetometerRepo}) : super(key: key);
-
+  const Degrees({Key? key, required this.magnetometerRepo, this.textStyle, this.showDegreesSimbol = true})
+      : super(key: key);
+  final TextStyle? textStyle;
   final MagnetometerRepository magnetometerRepo;
-
+  final bool showDegreesSimbol;
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<double>(
@@ -13,8 +14,8 @@ class Degrees extends StatelessWidget {
         builder: (context, snapshot) {
           final data = snapshot.data!;
           return Text(
-            data.floor().toString() + 'º',
-            style: const TextStyle(color: Colors.grey, fontSize: 22),
+            data.floor().toString() + (showDegreesSimbol ? 'º' : ''),
+            style: textStyle,
           );
         });
   }
