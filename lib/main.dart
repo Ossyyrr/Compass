@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Degrees(
               magnetometerRepo: magnetometerRepo,
               textStyle: const TextStyle(fontSize: 22),
-              // showDegreesSimbol: false,
+              showDegreesSimbol: true,
             ),
             Compass(
               magnetometerRepo: magnetometerRepo,
