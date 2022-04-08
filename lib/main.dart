@@ -1,4 +1,6 @@
-import 'package:compass/helpers/compass.dart';
+import 'package:compass/helpers/repos/magnetometer.dart';
+import 'package:compass/helpers/widgets/compass.dart';
+import 'package:compass/helpers/widgets/degress.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,10 +28,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late final magnetometerRepo = MagnetometerRepository();
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Compass(),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Compass(magnetometerRepo: magnetometerRepo),
+            Degrees(magnetometerRepo: magnetometerRepo),
+          ],
+        ),
+      ),
     );
   }
 }
