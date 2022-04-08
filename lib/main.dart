@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Compass(
               magnetometerRepo: magnetometerRepo,
               child: const Image(
-                image: AssetImage('assets/compass.png'),
+                image: AssetImage('assets/compass.png'), // Add an asset
                 fit: BoxFit.cover,
                 width: 150,
                 height: 150,
