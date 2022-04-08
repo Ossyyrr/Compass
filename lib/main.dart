@@ -28,11 +28,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: const <Widget>[Compass()],
-      ),
+    return const Scaffold(
+      body: Compass(),
     );
   }
 }
